@@ -12,5 +12,5 @@
       "dest": "/"
     }
   ]
-  "dev": { "command": "node app.js" }
+  "devCommad":"node app.js" 
 }
