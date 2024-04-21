@@ -1,4 +1,3 @@
-
 # Node.js Quiz Application
 
 This repository contains a simple Node.js quiz application that consists of both backend and frontend code. The application allows users to take a quiz and submit their answers to get their scores and feedback.
