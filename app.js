@@ -16,7 +16,6 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send("Hello");
   res.render('quiz', { quizData });
 });
 
