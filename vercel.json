@@ -12,4 +12,5 @@
       "dest": "/"
     }
   ]
+  "dev": { "command": "node app.js" }
 }
