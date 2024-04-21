@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Quiz</title>
+</head>
+<body>
+  <h1>Node.js Quiz</h1>
+  <div id="questionContainer">
+    <% quizData.forEach(function(question){%> 
+        <form class="question-form">
+            <h3><%= question.questionNo %>. <%= question.question %></h3>
+            <% question.options.forEach(function(option) { %>
+                <label>
+
+                    <input type="radio" name="answer_<%= question.questionNo %>" value="<%= option %>"><%= option %>
+                </label>
+                <br>
+            <% }); %>
+            <input type="hidden" name="questionNo" value="<%= question.questionNo %>">
+            <button type="submit" name="questionNo" value="<%= question.questionNo %>">Submit</button> 
+        </form>
+    <% }); %>
+</div>
+  <button id="result">Get Result</button> 
+  <div id="quizResult"></div>
+
+  <script>
+    
+    let answers=[]
+    let index = 0
+    async function fetchQuiz() {
+        try {
+            const questionForms = document.querySelectorAll('.question-form');
+            const result = document.getElementById('result');
+            questionForms.forEach(form => {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault(); // Prevent the default form submission behavior
+                    
+                    const formData = new FormData(form); 
+                    const selectedAnswer = formData.get(`answer_${form.querySelector('h3').textContent.split('.')[0]}`);
+                    
+                    const questionNo = formData.get('questionNo');
+                    
+                    
+                    if (!selectedAnswer) {
+                        return alert('Please select an answer.');
+                    }
+    
+                    answers.push({
+                        "questionNo": questionNo,
+                        "selectedAnswer": selectedAnswer
+                    });
+                    
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    submitButton.disabled = true;
+                });
+            });
+            const getResultButton = document.getElementById('result');
+            getResultButton.addEventListener('click', async () => {
+                if (answers.length === 0) {
+                    return alert('Please select an answer.');
+                }
+                try {
+                    const submitResponse = await fetch('/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ answer: answers })
+                    });
+                    console.log(submitResponse.body)
+                    const resultd = await submitResponse.json();
+                    quizResult= document.getElementById("quizResult");
+                    quizResult.innerHTML = `<h2>Your Score: ${resultd.score}</h2><p>${resultd.feedback[0].question}: ${resultd.feedback[0].result}${resultd.feedback[0].result === 'incorrect' ? `. Correct answer: ${result.feedback[0].correctAnswer}` : ''}</p>`;
+                } catch (error) {
+                    console.log("Error submitting answers:", error);
+                }
+            });
+        } catch (err) {
+            console.log("error in fetching data", err);
+        }
+    }
+    
+    fetchQuiz();
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+  {
+    "questionNo": "1",
+    "question": "What is the main purpose of Node.js?",
+    "options": ["To build web applications", "To write front-end code", "To run JavaScript on the server", "To create mobile apps"],
+    "correctAnswer": "To run JavaScript on the server"
+  },
+  {
+    "questionNo": "2",
+    "question": "Which of the following is a core module in Node.js?",
+    "options": ["http", "express", "react", "angular"],
+    "correctAnswer": "http"
+  },
+  {
+    "questionNo": "3",
+    "question": "What does npm stand for?",
+    "options": ["Node Package Manager", "New Package Manager", "Node Project Manager", "Necessary Package Manager"],
+    "correctAnswer": "Node Package Manager"
+  },
+  {
+    "questionNo": "4",
+    "question": "What is the event loop in Node.js?",
+    "options": ["A function that repeats every few milliseconds", "A loop that runs asynchronous tasks", "A loop that handles HTTP requests", "A function that handles errors"],
+    "correctAnswer": "A loop that runs asynchronous tasks"
+  },
+  {
+    "questionNo": "5",
+    "question": "What is a callback function in Node.js?",
+    "options": ["A function passed as an argument to another function", "A function that calls another function", "A function that repeats every few milliseconds", "A function that handles errors"],
+    "correctAnswer": "A function passed as an argument to another function"
+  },
+  {
+    "questionNo": "6",
+    "question": "Which method is used to include modules in Node.js?",
+    "options": ["require()", "import()", "use()", "add()"],
+    "correctAnswer": "require()"
+  },
+  {
+    "questionNo": "7",
+    "question": "What is the purpose of the 'fs' module in Node.js?",
+    "options": ["To create and manage file systems", "To format strings", "To handle HTTP requests", "To create web servers"],
+    "correctAnswer": "To create and manage file systems"
+  },
+  {
+    "questionNo": "8",
+    "question": "Which statement is true about streams in Node.js?",
+    "options": ["Streams are only used for file I/O", "Streams are objects used to read or write data sequentially", "Streams are used to define routes in Express.js", "Streams are used to include external modules"],
+    "correctAnswer": "Streams are objects used to read or write data sequentially"
+  },
+  {
+    "questionNo": "9",
+    "question": "What is the purpose of the 'path' module in Node.js?",
+    "options": ["To format strings", "To create and manage file systems", "To handle HTTP requests", "To manipulate file paths"],
+    "correctAnswer": "To manipulate file paths"
+  },
+  {
+    "questionNo": "10",
+    "question": "Which of the following is NOT a valid HTTP method in Node.js?",
+    "options": ["GET", "POST", "DELETE", "CREATE"],
+    "correctAnswer": "CREATE"
+  }
+]
