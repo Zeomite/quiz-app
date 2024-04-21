@@ -56,7 +56,7 @@ To deploy the application to a hosting service, follow these general steps:
 
 ## Demo
 
-A live demo of the application is available at [Demo Link](#) (if available).
+A live demo of the application is available at [Demo Link](#) .
 
 ## Dependencies
 
