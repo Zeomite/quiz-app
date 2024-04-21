@@ -77,10 +77,6 @@ Contributions to the Node.js quiz application are welcome! To contribute, follow
 4. Push your changes to your fork.
 5. Submit a pull request.
 
-## Acknowledgments
-
-- Thanks to [Name] for providing inspiration or assistance.
-- This project was built using [Library/Framework/Tool], which made development easier.
 
 ## License
 
